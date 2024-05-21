@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-// import { useQuestionnaire } from "../../../context/QuestionnaireContext";
 import { useQuestionnaire } from "@/context/QuestionnaireContext.jsx";
 import styles from "./AnswersContent.module.css";
 import  UnselectedCheckboxSVG  from "@/images/unselectedCircleCheckbox.svg";
 import  SelectedCheckboxSVG  from "@/images/selectedCircleCheckbox.svg";
-// import selectedCheckboxSVG from 'https://assets.sonary.com/wp-content/uploads/2024/05/05094126/selectedCircleCheckbox.svg"
-// import unselectedCheckboxSVG from 'https://assets.sonary.com/wp-content/uploads/2024/05/05094130/unselectedCircleCheckbox.svg"
-import InputWithValidation from "../../UI/Form/InputWithValidation.jsx";
+import InputWithValidation from "@/components/UI/Form/InputWithValidation.jsx";
+import useIsWideScreen from "@/hooks/useIsWideScreen";
 
 const OneSelectionQuestion = () => {
   const {
@@ -24,6 +22,7 @@ const OneSelectionQuestion = () => {
 
   const [isOtherSelected, setIsOtherSelected] = useState(false);
   const [otherInputValue, setOtherInputValue] = useState("");
+  const isWideScreen = useIsWideScreen();
 
   const isDisplayDirectionCol =
     currentQuestion.display_list_direction === "col";
@@ -39,9 +38,8 @@ const OneSelectionQuestion = () => {
 
     if (response.hasOwnProperty("other_text")) {
       setIsOtherSelected(true);
-      // changeNextBtnState(true);
       setOtherInputValue(response.other_text);
-      // focusAndScrollIntoView();
+
     } else {
       setIsOtherSelected(false);
       setOtherInputValue("");
@@ -49,30 +47,6 @@ const OneSelectionQuestion = () => {
     setLocalSelectedIndex(response.answerIndexes[0]);
   }, [currentQuestionCode, responses]);
 
-  const focusAndScrollIntoView = () => {
-    setTimeout(() => {
-      if (otherInputRef.current) {
-        otherInputRef.current.focus();
-
-          var targetTop = otherInputRef.offsetTop;
-          var targetHeight = otherInputRef.clientHeight;
-          var windowHeight = window.innerHeight;
-
-          // Calculate the scroll position to center the target element
-          var scrollPosition = targetTop - (windowHeight - targetHeight) / 2;
-        console.log("scrollPosition",scrollPosition)
-        console.log("targetTop",targetTop)
-        console.log("targetHeight",targetHeight);
-        console.log("windowHeight",windowHeight);
-
-
-          window.scrollTo({
-            top: scrollPosition,
-            behavior: "smooth",
-          });
-        }
-    }, 500);
-  };
   const handleClick = (index) => {
     if (isAnimatingOut) return;
     const selectedAnswer = currentQuestion.answers[index];
@@ -82,7 +56,6 @@ const OneSelectionQuestion = () => {
 
       handleAnswerSelection(currentQuestionCode, index);
     } else {
-      // focusAndScrollIntoView();
       changeNextBtnState(false);
       setLocalSelectedIndex(index);
       setIsOtherSelected(true);
@@ -102,20 +75,24 @@ const OneSelectionQuestion = () => {
             key={`${currentQuestion.code}-${index}`}
             className={`animateStaggerItem ${styles.answerItem} ${
               index === localSelectedIndex ? styles.selected : ""
-            } ${
-              isDisplayDirectionCol
+            }  ${
+            isWideScreen
+              ? isDisplayDirectionCol
                 ? styles.answerRowItem
                 : styles.answerCardItem
-            }  `}
+              : styles.answerRowItem
+          }  `}
             onClick={() => handleClick(index)}
           >
+                        {isWideScreen && answer.imgUrl && (
+  <img src={answer.imgUrl} alt="Logo" width="64" height="64" />
+)}
+
+
             <span>{answer.text}</span>
             {index === localSelectedIndex ? (
-              // <img src={selectedCheckboxSVG} alt="selected checkbox"/>
               <SelectedCheckboxSVG />
             ) : (
-              // <img src={unselectedCheckboxSVG} alt="unselected checkbox"/>
-
               <UnselectedCheckboxSVG />
             )}
           </div>

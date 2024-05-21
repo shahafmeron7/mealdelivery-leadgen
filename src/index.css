@@ -5,14 +5,15 @@
   --black-color-3:#006eff00;
   --black-color-4:rgba(0, 0, 0, 0.44);
   --blue-color-1:#006FFF;
+  --green-color-1:#33B249;
   --gray-color-1:rgba(153, 165, 197, 0.40);
   --border-border-50: rgba(153, 165, 197, 0.50);
   --border-border-20: rgba(153, 165, 197, 0.20);
   --border-border-100: #99A5C5;
   --bg-prev-btn-color:#F6F6F6;
-  --selected-bg-color:#e9eff6;
+  /* --selected-bg-color:#e9eff6; */
+  --selected-bg-color:rgba(51, 178, 73, 0.05);
   --err-color:#F62B54;
-  --bg-pos-logo:rgba(0, 111, 255, 0.10);
 
 }
 [autocomplete="off"] + div[data-lastpass-icon-root="true"] {

@@ -6,8 +6,8 @@
   width: 100%;
   position: relative;
   border-radius: 12px;
-border: 2px solid var(--blue-color-1);
-background: var(--bg-pos-logo);
+border: 2px solid var(--green-color-1);
+background: var(--selected-bg-color);
 }
 .logoPosWrapper {
   display: flex;

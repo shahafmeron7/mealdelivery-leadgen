@@ -9,15 +9,21 @@ const PartnerWith = () => {
   const { questionnaireCompleted } = useQuestionnaire();
   const isWideScreen = useIsWideScreen();
 
-  const finalStyle = {
-    padding: "80px 0px 0px 0px",
-  };
+ const finalStyle={
+  padding:"64px 0px",
+ }
   const finalMobileStyle = {
-    padding: "24px 16px 0px",
+    padding: "32px 16px 32px",
   };
-
+  console.log(isWideScreen)
   return (
-    <div className={styles.partnerWithWrapper} style={questionnaireCompleted && !isWideScreen ? finalMobileStyle : questionnaireCompleted && isWideScreen ? finalStyle : {}}>
+    <div className={styles.partnerWithWrapper}   style={
+      questionnaireCompleted
+        ? !isWideScreen
+          ? finalMobileStyle
+          : finalStyle
+        : {}
+    }>
       <div className={styles.partnerWithContainer}>
         <h2 className={styles.partnerWithTitle}>We proudly partner with</h2>
         <div className={styles.partnerWithDivider}></div>

@@ -24,7 +24,8 @@
     background-color: var(--border-border-50);
 }
 .partnerWithLogoContainer{
-    width: 150px;
+    flex: 0 1 calc(20%-64px);
+    /* max-width: 150px; */
     height: 30px;
     display: flex;
     align-items: center;
@@ -46,27 +47,27 @@ font-weight: 700;
 text-align: center;
 line-height: 36px;
 }
-.partnerWithBrandsContainer {
+ .partnerWithBrandsContainer {
     display: flex;
-    align-self: stretch;
-    /* justify-content: space-around; */
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    /* gap: 15px; */
-}
+    row-gap: 24px; /* gap between rows */
+    column-gap: 64px; /* gap between columns */
+} 
 
 @media only screen and (max-width:992px){
 .partnerWithBrandsContainer{
-     gap: 20px;
+    row-gap: 15px; /* gap between rows */
+    column-gap: 15px; /* gap between columns */
     flex-wrap: wrap;
     justify-content: center;
 }
 .partnerWithLogoContainer{
-    width: 125px;
+    /* width: 125px; */
     height: 25px;
 }
 .partnerWithLogo{
-    height: 25px;
+    /* height: 25px; */
 }
 }
 @media only screen and (max-width:600px){

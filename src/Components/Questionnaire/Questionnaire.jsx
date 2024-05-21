@@ -14,10 +14,10 @@ import StarsHero from "@/components/UI/StarsHero";
 import ExtraInfo from "@/components/UI/Promotional/ExtraInfo";
 import LegalMessage from "@/components/UI/Form/Legal/LegalMessage";
 import MiniLegalMessage from "@/components/UI/Form/Legal/MiniLegalMessge";
-import FormIcons from "@/components/UI/Form/FormIcons";
+ import FormIcons from "@/components/UI/Form/FormIcons";
 import QuestionnaireButtons from "@/components/UI/Form/QuestionnaireButtons";
 import QuestionnaireTitle from "@/components/UI/QuestionnaireTitle";
-import SSLIcon from "@/components/UI/Form/SSLIcon";
+// import SSLIcon from "@/components/UI/Form/SSLIcon";
 
 import styles from "./Questionnaire.module.css";
 
@@ -58,7 +58,6 @@ const Questionnaire = () => {
           <FormIcons   />
         </>
       )}
-      {isEmailStep && <StarsHero />}
 
       {isFormSequence && <FormProgress />}
       <QuestionnaireWrapper>
@@ -80,7 +79,7 @@ const Questionnaire = () => {
           {(isZipCodeStep || isEmailStep || isPersonalInfoStep) && <MiniLegalMessage/>}
           {isFinalStep && (
             <>
-              <SSLIcon />
+              {/* <SSLIcon /> */}
               <LegalMessage />
             </>
           )}

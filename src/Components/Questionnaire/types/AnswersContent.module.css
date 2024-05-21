@@ -5,7 +5,7 @@
   align-items: center;
 }
 .finalStepTitle{
-  color: var(--blue-color-1);
+  color: var(--green-color-1);
   font-size: 32px;
 font-style: normal;
 font-weight: 700;
@@ -31,11 +31,11 @@ line-height: 24px;
   background-color: #fff;
 }
 .selected {
-  outline: 2px solid var(--blue-color-1);
+  outline: 2px solid var(--green-color-1);
   background-color: var(--selected-bg-color);
 }
 .answerItem:hover {
-  outline: 2px solid var(--blue-color-1);
+  outline: 2px solid var(--green-color-1);
 }
 .listRow {
   flex-direction: row;

@@ -10,7 +10,7 @@ export const useQuestionnaireState = (state,dispatch,completeQuestionnaire) => {
         } else {
             dispatch({ type: actionTypes.TOGGLE_QUESTIONNAIRE_STARTED, payload: false });
         }
-        if (currentQuestionCode === "thank_you") {
+        if (currentQuestionCode === "recommandation") {
             dispatch({ type: actionTypes.TOGGLE_QUESTIONNAIRE_COMPLETED, payload: true });
             completeQuestionnaire()
         } else {

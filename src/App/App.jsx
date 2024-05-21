@@ -4,7 +4,7 @@ import React, { Suspense } from "react";
 import { useQuestionnaire } from "@/context/QuestionnaireContext.jsx";
 import Questionnaire from "@/components/Questionnaire/Questionnaire.jsx";
 import Navbar from "@/components/Navbar/Navbar.jsx";
-import ThankYouLayout from "@/layouts/ThankYouLayout.jsx";
+import FinalStepLayout from "@/layouts/FinalStepLayout.jsx";
 import ContentLayout from "@/layouts/ContentLayout.jsx";
 import Loading from "@/components/UI/LazyLoading/Loading";
 import "./App.css";
@@ -24,7 +24,7 @@ function App() {
     return (
       <div className="AppWrapper">
         <Navbar />
-        <ThankYouLayout />
+        <FinalStepLayout />
         <Suspense fallback={<Loading />}>
             <Footer />
           </Suspense>

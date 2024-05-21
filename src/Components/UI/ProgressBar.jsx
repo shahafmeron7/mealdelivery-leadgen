@@ -8,7 +8,7 @@ const ProgressBar = () => {
     width: `${progressBarWidth}%`,
     height: '6px',
     borderRadius: '8px',
-    backgroundColor: 'var(--blue-color-1)',
+    backgroundColor: 'var(--green-color-1)',
     transition: 'width 0.2s linear 0s'
   };
   return (

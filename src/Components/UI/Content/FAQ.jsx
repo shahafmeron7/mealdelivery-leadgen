@@ -3,16 +3,20 @@ import styles from './FAQ.module.css'
 const FAQ = () => {
   const faqItems = [
     {
+      text: "How does your service work?",
+      details: "After answering six short questions, our system automatically matches you with the best meal delivery service tailored to your personal preferences according to your answers.",
+  },
+    {
         text: "Why is it important to compare brands?",
-        details: "Comparing payroll service providers is key in finding the right one for your business needs. It ensures you get the most cost-effective and suitable option with the right features and services.",
+        details: "Comparing different meal delivery service providers is key to finding the most relevant one for your dietary preferences. It ensures you receive the most suitable match out of the many options out there.",
     },
     {
-      text: "How long does it take to hear from the provider(s) once I submit my information?",
-      details: "Once you submit your request, our system will process your responses to find you the best provider. You can expect to hear from them shortly after. The exact timing may vary based on your location, needs and availability of the providers.",
+      text: "How do you ensure the service is high quality?",
+      details: "We regularly review available meal delivery services on the market and curate our site according to our findings. We ensure our site is up to date to guarantee the most relevant recommendations for our users.",
   },
   {
-    text: "Is there an associated fee or cost for using this service?",
-    details: "No, our service is free for businesses like yours. You can use our questionnaire to receive matches at no cost.",
+    text: "Is there a fee or cost for using this service?",
+    details: "No, our service is completely free to use. You can use our questionnaire to receive matches at no cost at all.",
 },
   ]
   const FaqItem = ({item})=>{

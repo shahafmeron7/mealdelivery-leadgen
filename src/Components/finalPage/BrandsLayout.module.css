@@ -46,7 +46,7 @@
   align-items: center;
   border-radius: 8px;
   border: none;
-  background: var(--blue-color-1);
+  background: var(--green-color-1);
 
   text-decoration: none;
   color: #fff;
@@ -98,7 +98,7 @@ align-items: flex-start;
 }
 .compareButton{
 
-  color: var(--blue-color-1);
+  color: var(--green-color-1);
   font-weight: 400;
   text-underline-position: under;
   line-height: 22px;

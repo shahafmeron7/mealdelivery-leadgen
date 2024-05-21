@@ -74,7 +74,7 @@
 }
 .enabled{
   cursor: pointer;
-  background-color: var(--blue-color-1);
+  background-color: var(--green-color-1);
   transition: background-color 0.5s ease-in-out;
 }
 .exitFadeOut{

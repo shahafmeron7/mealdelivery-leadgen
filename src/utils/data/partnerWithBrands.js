@@ -1,30 +1,40 @@
 export const partnerBrands = [
   {
-    src: "https://assets.trafficpointltd.com/app/uploads/sites/148/2020/12/13094314/paychex_l_medium-01.svg",
-    alt: "Paychex Logo",
+    src: "https://assets.trafficpointltd.com/app/uploads/sites/106/20180719072149/blueapron_l.svg",
+    alt: "Blue Apron Logo",
   },
   {
-    src: "https://assets.trafficpointltd.com/app/uploads/sites/148/2020/12/10120959/Adp_l_medium.svg",
-    alt: "ADP Logo",
+    src: "https://assets.trafficpointltd.com/app/uploads/sites/106/2021/05/24124257/HelloFresh_l.svg",
+    alt: "Hello Fresh Logo",
   },
   {
-    src: "https://assets.trafficpointltd.com/app/uploads/sites/148/2021/09/21100649/paycor_l_mobile.svg",
-    alt: "Paycor Logo",
+    src: "https://assets.trafficpointltd.com/app/uploads/sites/106/2019/02/24162830/everyplate_l.svg",
+    alt: "EveryPlate Logo",
   },
   {
-    src: "https://assets.trafficpointltd.com/app/uploads/sites/148/2021/08/16141343/gusto_l_large-01.svg",
-    alt: "Gusto Logo",
+    src: "https://assets.trafficpointltd.com/app/uploads/sites/106/2024/05/21113258/greenchefnew1.svg",
+    alt: "Green Chef Logo",
   },
   {
-    src: "https://assets.trafficpointltd.com/app/uploads/sites/6/2021/07/21103809/Oracle-NetSuite_l-2.svg",
-    alt: "Netsuite Logo",
+    src: "https://assets.trafficpointltd.com/app/uploads/sites/106/20181004150545/bistromd_l.svg",
+    alt: "Bistro md Logo",
   },
   {
-    src: "https://assets.sonary.com/wp-content/uploads/2024/05/08113648/onpay_l_medium-01.svg",
-    alt: "Onpay Logo",
+    src: "https://assets.trafficpointltd.com/app/uploads/sites/106/2024/05/20215626/Hungryroot_l.svg",
+    alt: "Hungryroot Logo",
   },
   {
-    src: "https://assets.sonary.com/wp-content/uploads/2024/05/08113650/justworks_l_medium-01.svg",
-    alt: "Justworks Logo",
+    src: "https://assets.trafficpointltd.com/app/uploads/sites/106/20180719094418/homechef_d1.svg",
+    alt: "Home Chef Logo",
+  },
+
+  {
+    src: "https://assets.trafficpointltd.com/app/uploads/sites/106/2024/05/21110004/eatclean.svg",
+    alt: "Eat Clean Logo",
+  },
+
+  {
+    src: "https://assets.trafficpointltd.com/app/uploads/sites/106/2021/05/20123937/Factor75.svg",
+    alt: "Factor Logo",
   },
 ];

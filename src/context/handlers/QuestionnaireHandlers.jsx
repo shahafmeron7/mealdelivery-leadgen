@@ -53,7 +53,7 @@ export const QuestionnaireHandlers = (
       const prevStep = findStepNumber(prevQuestionCode);
       const newProgressBarWidth = Math.min(
         100,
-        Math.round(((prevStep - 1) / (4 - 1)) * 100)
+        Math.round(((prevStep - 1) / (6 - 1)) * 100)
       );
 
       dispatch({
@@ -138,7 +138,7 @@ export const QuestionnaireHandlers = (
       const nextStep = findStepNumber(nextQuestionCode);
       const newProgressBarWidth = Math.min(
         100,
-        Math.round(((nextStep - 1) / (4 - 1)) * 100)
+        Math.round(((nextStep - 1) / (6 - 1)) * 100)
       );
       dispatch({
         type: actionTypes.SET_PROGRESS_BAR_WIDTH,
@@ -177,26 +177,47 @@ export const QuestionnaireHandlers = (
   };
 
   const handleMultipleAnswerSelection = (questionCode, selectedIndexes) => {
-    const { currentQuestion } = state;
+    const { currentQuestion,responses } = state;
+    console.log(selectedIndexes)
     const answersData = selectedIndexes.map((index) => {
       return {
         text: currentQuestion.answers[index].text,
         index: index,
+        isOther: currentQuestion.answers[index].isOther
       };
     });
 
-    const response = {
-      answer: answersData.map((answer) => answer.text).join(", "),
-      answerIndexes: selectedIndexes,
-      step: currentQuestion.step,
-      question: currentQuestion.text,
-    };
+    const existingResponse = responses[questionCode] || {};
+  let newResponse = {
+    ...existingResponse,
+    answer: answersData.map((answer) => answer.text).join(", "),
+    answerIndexes: selectedIndexes,
+    step: currentQuestion.step,
+    question: currentQuestion.text,
+  };
+  const otherAnswer = answersData.find(answer => answer.isOther);
+  if (otherAnswer) {
+    newResponse.other_text = existingResponse.other_text || "";
+
+  } else {
+    if (newResponse.hasOwnProperty("other_text")) {
+      console.log('delete new other response')
+      delete newResponse.other_text;
+    }
+  }
+
+    
 
     dispatch({
       type: actionTypes.UPDATE_RESPONSES,
       questionCode: questionCode,
-      response: response,
+      response: newResponse,
     });
+  };
+  const isOtherTextFilled = (response) => {
+    return response.other_text !== undefined &&
+           response.other_text !== null &&
+           response.other_text.trim() !== "";
   };
   const checkAndEnableNextButton = useCallback(() => {
     const { currentQuestion, responses } = state;
@@ -226,10 +247,8 @@ export const QuestionnaireHandlers = (
             const answerIndex = response.answerIndexes[0]; // Since one-selection should have only one index
             if (currentQuestion.answers[answerIndex].isOther) {
               // Check if other text is not empty when 'Other' option is selected
-              isAnswered =
-                response.other_text !== undefined &&
-                response.other_text !== null &&
-                response.other_text.trim() !== "";
+              isAnswered = isOtherTextFilled(response);
+
             } else {
               // Regular answer is selected
 
@@ -237,7 +256,17 @@ export const QuestionnaireHandlers = (
             }
           }
         } else if (currentQuestion.type === "multi-selection") {
-          isAnswered = response.answerIndexes.length > 0;
+          if (response.answerIndexes.length > 0) {
+            const otherSelected = response.answerIndexes.some(index => currentQuestion.answers[index].isOther);
+            if (otherSelected) {
+              // Check if other text is not empty when 'Other' option is selected
+              isAnswered = isOtherTextFilled(response);
+
+            } else {
+              // Regular answers are selected
+              isAnswered = true;
+            }
+          }
         }
       }
       dispatch({
@@ -252,7 +281,6 @@ export const QuestionnaireHandlers = (
     const answer = currentQuestion.answers[answerIndex];
     const answerText = answer?.text;
     const existingResponse = responses[questionCode] || {};
-    // checkAndUpdateFormID(questionCode, answerIndex);
 
     const newResponse = {
       ...existingResponse,
@@ -280,7 +308,7 @@ export const QuestionnaireHandlers = (
       const nextStep = findStepNumber(nextQuestionCode);
       const newProgressBarWidth = Math.min(
         100,
-        Math.round(((nextStep - 1) / (4 - 1)) * 100)
+        Math.round(((nextStep - 1) / (6 - 1)) * 100)
       );
       dispatch({
         type: actionTypes.SET_PROGRESS_BAR_WIDTH,
@@ -357,11 +385,6 @@ export const QuestionnaireHandlers = (
     let finalResponses = {};
     Object.entries(responses).forEach(([key, value]) => {
       value.users_answer = value.answer;
-      //  For 'num_employees', convert the range to a single number (e.g., '2-9' becomes '2')
-      if (key === "num_employees") {
-        let answerIndex = value.answerIndexes[0];
-        value.answer = answerIndex !== 0 ? value.answer.split(/[-+]/)[0] : "1";
-      }
     });
 
     finalResponses = Object.keys(responses).reduce((acc, key) => {
@@ -369,24 +392,11 @@ export const QuestionnaireHandlers = (
       acc[key] = responseWithoutIndexes;
       return acc;
     }, {});
-    const testEmail = {
-      "7": "test@adptest.com",
-      "9": "15MAY_Test_2@paychextest.com",
-      "10": "test@paycortest.com"
-    }
+ 
 
     // const { selectedBrand, allScores } = calculateScores(finalResponses);
     const selectedBrand ="9";
-     console.log("Selected Brand:", selectedBrand);
-    //  console.log("Scores:", allScores);
-    // let testID='9';
-    if(selectedBrand===import.meta.env.REACT_APP_PAYCOR_FORM_ID){
-      console.log("change paycor")
-      updatePaycorResponseFormat(finalResponses)
-    }
-     finalResponses["email"]["answer"] = testEmail[selectedBrand];
-      // finalResponses["email"]["answer"] = "sonary3@adptest.com";
-
+  
     console.log(finalResponses);
 
     sendImpressions(

@@ -1,40 +1,35 @@
 import React from "react";
 import "./Footer.css";
+import mealDeliveryLogo from "@/images/top5mealdelivery_logo_footer.svg?url";
+
 const Footer = () => {
   return (
     <div className="layout-footer">
       <div className="footer sonary-container">
         <div className="links-wrapper">
           <div className="links-container menu-links">
-            <div className="menu-links-title">Menu Links</div>
+            <div className="menu-links-title">Company</div>
 
-            <a className="text" href="https://sonary.com/about/">
+            <a className="text" href="https://top5mealdelivery.com/about-us/">
               About Us
             </a>
-
-            <a className="text" href="https://sonary.com/b/">
-              Partners
-            </a>
-
-            <a className="text" href="https://sonary.com/contact-us/">
-              Contact Us
-            </a>
+           
           </div>
           <div className="links-container quick-links">
             <div className="quick-links-title">Quick Links</div>
-            <a className="text" href="https://sonary.com/terms-of-use/">
+            <a className="text" href="https://top5mealdelivery.com/terms-and-conditions/">
               Terms of Use
             </a>
 
-            <a className="text" href="https://sonary.com/privacy-policy/">
+            <a className="text" href="https://top5mealdelivery.com/privacy-policy/">
               Privacy Policy
             </a>
 
-            <a className="text" href="https://sonary.com/how-we-rate/">
+            <a className="text" href="https://top5mealdelivery.com/how-we-rate/">
               How We Rate
             </a>
 
-            <a className="text" href="https://sonary.com/ccpa-privacy-notice/">
+            <a className="text" href="https://top5mealdelivery.com/ccpa-privacy-notice/">
               CCPA Privacy Notice
             </a>
 
@@ -45,17 +40,17 @@ const Footer = () => {
           <div className="title-logos">
             <div className="big-logo">
               <img
-                alt="Sonary-logo"
+                alt="MealDelivery-logo"
                 loading="lazy"
                 width="295"
                 height="46"
                 decoding="async"
                 data-nimg="1"
-                src="https://sonary.com/img/icons/Logo_White.svg"
-                style={{ color: "transparent" }}
+                src={mealDeliveryLogo}
+                 style={{ color: "transparent" }}
               />
             </div>
-            <div className="logos">
+            {/* <div className="logos">
               <a href="https://www.linkedin.com/company/sonary-com/">
                 <img
                   alt="linkedin"
@@ -92,7 +87,7 @@ const Footer = () => {
                   style={{ color: "transparent" }}
                 />
               </a>
-            </div>
+            </div> */}
           </div>
           <div className="footer-text">
             <p>

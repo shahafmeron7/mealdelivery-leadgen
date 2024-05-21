@@ -1,5 +1,5 @@
 .layout-footer {
-  background-color: #001c41;
+  background-color: #323738;
   color: #fff;
   font-size: 30px;
   display: flex;
@@ -124,6 +124,7 @@
   }
   .right-text {
     width: 100%;
+    padding-top:24px;
   }
 }
 @media only screen and (max-width: 450px) {
@@ -144,6 +145,8 @@
   .right-text {
     width: 100%;
     gap: 19px;
+    padding-top:24px;
+
   }
   .links-container {
     width: 100%;
@@ -162,7 +165,7 @@
     border-bottom: 1px solid var(--border-border-30, rgba(153, 165, 197, 0.3));
   }
   .text {
-    background: var(--tertiary-tertiary-100, #022450);
+    background: var(--tertiary-tertiary-100, #323738);
   }
   .title-logos {
     flex-direction: column-reverse;

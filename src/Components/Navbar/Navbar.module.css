@@ -8,19 +8,11 @@
     padding: 8px 0px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
-.logosWrapper{
-    display:flex;
-    gap:16px;
-    align-items:center;
-}
+
 @media only screen and (max-width: 767px) {
-    .logosWrapper{
-      flex-direction: column;
-      gap: 4px;
-    }
-    .logosWrapper img{
-        height: 18px;
-    }
-  }
+ .navbarWrapper img{
+    height: 18px;
+ }
+}

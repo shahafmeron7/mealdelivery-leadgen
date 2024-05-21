@@ -1,0 +1,36 @@
+.advLayoutContainer {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+ 
+ 
+ @media only screen and (min-width: 1200px) {
+     .advLayoutWrapper{
+       width: 1140px;
+     }
+ }
+ @media only screen and (min-width: 1024px) and (max-width:1199px) {
+   .advLayoutWrapper{
+     width: 945px;
+   }
+ }
+ 
+ @media only screen and (min-width: 992px) and (max-width:1023px) {
+   .advLayoutWrapper{
+     width: 897px;
+   }
+ }
+ @media only screen and (min-width: 768px) and (max-width:991px) {
+   .advLayoutWrapper{
+     width: 721px;
+   }
+ }
+ 
+ @media only screen and (max-width: 767px) {
+   .advLayoutWrapper{
+      padding: 6px 16px;
+   }
+ }
+ 
