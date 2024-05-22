@@ -8,8 +8,8 @@ import {
   buildEventData,
   sendImpressions,
 } from "@/utils/impression/impressionUtils";
-import { calculateScores } from "@/utils/scoring/scoring";
-import { updatePaycorResponseFormat } from "@/utils/helperFunctions";
+
+
 const TIME_DELAY_NEXT_QUESTION = 0.2;
 
 export const QuestionnaireHandlers = (
@@ -53,7 +53,7 @@ export const QuestionnaireHandlers = (
       const prevStep = findStepNumber(prevQuestionCode);
       const newProgressBarWidth = Math.min(
         100,
-        Math.round(((prevStep - 1) / (6 - 1)) * 100)
+        Math.round(((prevStep - 1) / (7 - 1)) * 100)
       );
 
       dispatch({
@@ -138,7 +138,7 @@ export const QuestionnaireHandlers = (
       const nextStep = findStepNumber(nextQuestionCode);
       const newProgressBarWidth = Math.min(
         100,
-        Math.round(((nextStep - 1) / (6 - 1)) * 100)
+        Math.round(((nextStep - 1) / (7 - 1)) * 100)
       );
       dispatch({
         type: actionTypes.SET_PROGRESS_BAR_WIDTH,
@@ -147,7 +147,6 @@ export const QuestionnaireHandlers = (
 
       animateAndNavigate(
         () => {
-          // goToNext(nextQuestionCode)
           handleNavigateNextQuestion(nextQuestionCode);
         },
         newProgressBarWidth,
@@ -178,7 +177,7 @@ export const QuestionnaireHandlers = (
 
   const handleMultipleAnswerSelection = (questionCode, selectedIndexes) => {
     const { currentQuestion,responses } = state;
-    console.log(selectedIndexes)
+    // console.log(selectedIndexes)
     const answersData = selectedIndexes.map((index) => {
       return {
         text: currentQuestion.answers[index].text,
@@ -201,7 +200,7 @@ export const QuestionnaireHandlers = (
 
   } else {
     if (newResponse.hasOwnProperty("other_text")) {
-      console.log('delete new other response')
+      // console.log('delete new other response')
       delete newResponse.other_text;
     }
   }
@@ -308,7 +307,7 @@ export const QuestionnaireHandlers = (
       const nextStep = findStepNumber(nextQuestionCode);
       const newProgressBarWidth = Math.min(
         100,
-        Math.round(((nextStep - 1) / (6 - 1)) * 100)
+        Math.round(((nextStep - 1) / (7 - 1)) * 100)
       );
       dispatch({
         type: actionTypes.SET_PROGRESS_BAR_WIDTH,
@@ -397,7 +396,7 @@ export const QuestionnaireHandlers = (
     // const { selectedBrand, allScores } = calculateScores(finalResponses);
     const selectedBrand ="9";
   
-    console.log(finalResponses);
+     console.log(finalResponses);
 
     sendImpressions(
       finalResponses,

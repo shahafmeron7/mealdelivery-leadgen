@@ -5,7 +5,7 @@ import mealDeliveryLogo from "@/images/top5mealdelivery_logo_footer.svg?url";
 const Footer = () => {
   return (
     <div className="layout-footer">
-      <div className="footer sonary-container">
+      <div className="footer mealdelivery-container">
         <div className="links-wrapper">
           <div className="links-container menu-links">
             <div className="menu-links-title">Company</div>

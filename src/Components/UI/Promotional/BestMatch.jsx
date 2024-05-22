@@ -7,19 +7,19 @@ const BestMatch = () => {
   const cards = [
     {
       title: "Expert Insight",
-      info: "Utilize our expertise to quickly and easily find the payroll service provider for your business.",
+      info: "We leverage our expertise to match you with the best service for your needs quickly.",
       Logo: ExpertsLogo,
       alt: "Experts Logo",
     },
     {
       title: "Trusted Providers",
-      info: "We partner with trusted payroll service providers to ensure quality and reliability.",
+      info: "We exclusively partner with reputable & leading meal delivery services to ensure quality & reliability.",
       Logo: TrustedProvidedLogo,
       alt: "Trusted Providers Logo",
     },
     {
       title: "Tailored Matches",
-      info: "A few questions to find the right fit for your specific business needs. No more endless searching.",
+      info: "A few quick questions to find the correct fit for your needs. Let us do all the hard work for you.",
       Logo: TailoredMatchesLogo,
       alt: "Tailored Matches Logo",
     },

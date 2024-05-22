@@ -9,16 +9,10 @@ import ProgressBar from "@/components/UI/ProgressBar";
 
 import Loader from "@/components/Questionnaire/types/Loader";
 import QuestionnaireWrapper from "@/layouts/QuestionnaireWrapper";
-import FormProgress from "@/components/UI/Form/FormProgress";
-import StarsHero from "@/components/UI/StarsHero";
-import ExtraInfo from "@/components/UI/Promotional/ExtraInfo";
-import LegalMessage from "@/components/UI/Form/Legal/LegalMessage";
-import MiniLegalMessage from "@/components/UI/Form/Legal/MiniLegalMessge";
- import FormIcons from "@/components/UI/Form/FormIcons";
+
+import FormIcons from "@/components/UI/Form/FormIcons";
 import QuestionnaireButtons from "@/components/UI/Form/QuestionnaireButtons";
 import QuestionnaireTitle from "@/components/UI/QuestionnaireTitle";
-// import SSLIcon from "@/components/UI/Form/SSLIcon";
-
 import styles from "./Questionnaire.module.css";
 
 const Questionnaire = () => {
@@ -33,11 +27,6 @@ const Questionnaire = () => {
 
 
   const isFormSequence = currentQuestion.type === "form-type";
-  const isFinalStep = currentQuestionCode === "phone";
-  const isZipCodeStep = currentQuestionCode === "zip_code";
-  const isPersonalInfoStep = currentQuestionCode ==='personal_and_business_info'
-  const isEmailStep = currentQuestionCode === "email";
-
 
   if (showLoader) {
     return (
@@ -59,7 +48,6 @@ const Questionnaire = () => {
         </>
       )}
 
-      {isFormSequence && <FormProgress />}
       <QuestionnaireWrapper>
         {!isFormSequence && <ProgressBar />}
         {currentQuestion.text && (
@@ -74,16 +62,6 @@ const Questionnaire = () => {
         )}
         <div className={styles.contentWrapper}>
           <AnswersContent  />
-
-          {(isFinalStep || isZipCodeStep) && <ExtraInfo />}
-          {(isZipCodeStep || isEmailStep || isPersonalInfoStep) && <MiniLegalMessage/>}
-          {isFinalStep && (
-            <>
-              {/* <SSLIcon /> */}
-              <LegalMessage />
-            </>
-          )}
-
           <QuestionnaireButtons />
         </div>
       </QuestionnaireWrapper>

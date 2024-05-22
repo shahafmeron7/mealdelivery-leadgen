@@ -70,9 +70,9 @@ const MultipleChoiceQuestion = () => {
     let newSelectedIndexes;
 
     if (selectedAnswer.isOther) {
-      console.log('isOther')
+      // console.log('isOther')
       if (selectedIndexes.includes(index)) {
-        console.log('')
+        // console.log('')
 
         // Unselect the 'Other' option if it is already selected
         newSelectedIndexes = selectedIndexes.filter(i => i !== index);

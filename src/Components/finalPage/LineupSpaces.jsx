@@ -24,7 +24,7 @@ const LineupSpaces = () => {
   }, []);
 
   return (
-   <div>
+   <div className={styles.spacesWrapper}>
     <div id="list"></div>
       <span className={styles.termsText}>*Featured prices and terms can be updated. Free offers may include additional terms.</span>
    </div>

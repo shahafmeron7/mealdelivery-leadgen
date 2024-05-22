@@ -15,7 +15,7 @@ const PartnerWith = () => {
   const finalMobileStyle = {
     padding: "32px 16px 32px",
   };
-  console.log(isWideScreen)
+  // console.log(isWideScreen)
   return (
     <div className={styles.partnerWithWrapper}   style={
       questionnaireCompleted

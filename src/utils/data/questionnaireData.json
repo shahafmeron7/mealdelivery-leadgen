@@ -11,7 +11,7 @@
       "answers": [
         {
           "text": "Ready Made Dishes",
-          "next_question_code": "recommandation",
+          "next_question_code": "dietary_preferences",
           "imgUrl":"https://assets.trafficpointltd.com/app/uploads/sites/106/2024/05/20114041/ReadyMadeDishes.svg"
         },
         {
