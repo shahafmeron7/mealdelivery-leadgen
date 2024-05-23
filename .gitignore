@@ -25,5 +25,3 @@ yarn-error.log*
 #env
 .env*
 !.env.example
-# Ignore questionnaireData.json
-/src/utils/data/questionnaireData.json

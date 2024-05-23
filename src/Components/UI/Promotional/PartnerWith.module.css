@@ -76,3 +76,14 @@ line-height: 36px;
     }
 }
 
+@media (min-width: 769px) {
+    .partnerWithLogoContainer {
+      order: var(--orderDesktop);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .partnerWithLogoContainer {
+      order: var(--orderMobile);
+    }
+  }

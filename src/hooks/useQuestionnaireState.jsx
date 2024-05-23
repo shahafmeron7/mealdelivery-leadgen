@@ -11,6 +11,7 @@ export const useQuestionnaireState = (state,dispatch,completeQuestionnaire) => {
             dispatch({ type: actionTypes.TOGGLE_QUESTIONNAIRE_STARTED, payload: false });
         }
         if (currentQuestionCode === "recommandation") {
+            console.log('final')
             dispatch({ type: actionTypes.TOGGLE_QUESTIONNAIRE_COMPLETED, payload: true });
             completeQuestionnaire()
         } else {

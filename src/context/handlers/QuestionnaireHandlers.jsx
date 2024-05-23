@@ -65,7 +65,6 @@ export const QuestionnaireHandlers = (
           type: actionTypes.SET_CURRENT_QUESTION_CODE,
           payload: prevQuestionCode,
         });
-        // goToPrevious(prevQuestionCode,newHistory);  // Now purely handles the state and history update
       }, newProgressBarWidth);
 
       dispatch({ type: actionTypes.SET_QUESTION_HISTORY, payload: newHistory });
@@ -385,24 +384,25 @@ export const QuestionnaireHandlers = (
     Object.entries(responses).forEach(([key, value]) => {
       value.users_answer = value.answer;
     });
-
+    const spacesListId = 
+    [0, 2].some(index => responses['meal_service_type'].answerIndexes.includes(index)) ?
+    import.meta.env.REACT_APP_HELLOFRESH_LIST_ID : import.meta.env.REACT_APP_FACTOR_LIST_ID  
+    dispatch({
+      type: actionTypes.SET_SPACES_LIST_ID,
+      payload: spacesListId,
+    });
     finalResponses = Object.keys(responses).reduce((acc, key) => {
       const { answerIndexes, ...responseWithoutIndexes } = responses[key];
       acc[key] = responseWithoutIndexes;
       return acc;
     }, {});
- 
-
-    // const { selectedBrand, allScores } = calculateScores(finalResponses);
-    const selectedBrand ="9";
-  
+    
      console.log(finalResponses);
-
+    
     sendImpressions(
       finalResponses,
       import.meta.env.REACT_APP_FINAL_SUBMIT_EVENT_NAME,
       import.meta.env.REACT_APP_STREAM_FINAL_NAME,
-      selectedBrand
     );
     dispatch({
       type: actionTypes.TOGGLE_QUESTIONNAIRE_COMPLETED,

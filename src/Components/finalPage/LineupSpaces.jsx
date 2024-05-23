@@ -1,33 +1,27 @@
-import React, { useEffect } from 'react';
-import { SPACES_URL } from '@/utils/data/spacesURL';
+import React, { useEffect, useRef } from 'react';
 import styles from './LineupSpaces.module.css';
-const LineupSpaces = () => {
-  useEffect(() => {
-   const template = document.querySelector("#hiddenlist");
-   const div = document.getElementById("list");
-   div.append(template);
-   template.style = "display: block;"
+import { setSpacesDynamic } from '@/utils/data/spacesScript'; 
+import { useQuestionnaire } from "@/context/QuestionnaireContext.jsx";
 
-    async function fetch(){
-      try {
-          const response = fetch(SPACES_URL);
-          if(!response.ok){
-             throw new Error('spaces could not be fetched.')
-          }
-          const data = await response.json();
-          return data;
-      } catch (error) {
-         console.log(error.message);
-      }
+const LineupSpaces = () => {
+  const {spacesListId} = useQuestionnaire();
+
+  const spacesRef = useRef(null);
+  const hasLoadedRef = useRef(false); 
+  // 1492 & 1496
+
+  useEffect(() => {
+    if (!hasLoadedRef.current) {
+      setSpacesDynamic(spacesListId);
+      hasLoadedRef.current = true; 
     }
-    //fetch();
-  }, []);
+    }, [spacesListId]);
 
   return (
-   <div className={styles.spacesWrapper}>
-    <div id="list"></div>
+    <div className={styles.spacesWrapper}>
+      <div id="spaces" ref={spacesRef}></div>
       <span className={styles.termsText}>*Featured prices and terms can be updated. Free offers may include additional terms.</span>
-   </div>
+    </div>
   );
 };
 

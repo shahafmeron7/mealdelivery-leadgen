@@ -19,7 +19,6 @@ const PartnerWith = React.lazy(
 
 function App() {
   const { questionnaireCompleted, questionnaireStarted } = useQuestionnaire();
-
   if (questionnaireCompleted) {
     return (
       <div className="AppWrapper">

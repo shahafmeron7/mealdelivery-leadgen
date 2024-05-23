@@ -1,0 +1,200 @@
+{
+  "flow_id": 1,
+  "flow_name": "meal_delivery",
+  "questions": [
+    {
+      "text": "Which type of meal delivery service are you looking for?",
+      "code": "meal_service_type",
+      "step": 1,
+      "type": "one-selection",
+      "display_list_direction": "row",
+      "answers": [
+        {
+          "text": "Ready Made Dishes",
+          "next_question_code": "dietary_preferences",
+          "imgUrl":"https://assets.trafficpointltd.com/app/uploads/sites/106/2024/05/20114041/ReadyMadeDishes.svg"
+        },
+        {
+          "text": "Meal Kits (some cooking)",
+          "next_question_code": "dietary_preferences",
+          "imgUrl":"https://assets.trafficpointltd.com/app/uploads/sites/106/2024/05/20114039/MealKits.svg"
+        },
+        {
+          "text": "I’m not sure",
+          "next_question_code": "dietary_preferences",
+          "imgUrl":"https://assets.trafficpointltd.com/app/uploads/sites/106/2024/05/20114040/Notsure.svg"
+        }
+      ]
+    },
+    {
+      "text": "Choose your preferences",
+      "code": "dietary_preferences",
+      "step": 2,
+      "type": "multi-selection",
+      "display_list_direction": "col",
+      "instructions":"Select all that apply",
+      "answers": [
+        {
+          "text": "Omnivore - I eat both meat & seafood",
+          "next_question_code": "meal_type"
+        },
+        {
+          "text": "Pescatarian - I don’t eat meat but do eat fish",
+          "next_question_code": "meal_type"
+        },
+        {
+          "text": "Vegetarian - I don’t eat meat or seafood",
+          "next_question_code": "meal_type"
+        },
+        {
+          "text": "Vegan - I don’t eat meat, seafood, dairy or eggs",
+          "next_question_code": "meal_type"
+        }
+      ]
+    },
+    {
+      "text": "What meal do you need help with?",
+      "code": "meal_type",
+      "step": 3,
+      "type": "multi-selection",
+      "display_list_direction": "row",
+      "instructions":"Select all that apply",
+      "answers": [
+        {
+          "text": "Breakfast",
+          "next_question_code": "user_goal",
+          "imgUrl":"https://assets.trafficpointltd.com/app/uploads/sites/106/2024/05/20120351/breakfast.svg"
+        },
+        {
+          "text": "Lunch",
+          "next_question_code": "user_goal",
+          "imgUrl":"https://assets.trafficpointltd.com/app/uploads/sites/106/2024/05/20120358/Lunch.svg"
+        },
+        {
+          "text": "Dinner",
+          "next_question_code": "user_goal",
+          "imgUrl":"https://assets.trafficpointltd.com/app/uploads/sites/106/2024/05/20120359/Dinner.svg"
+        }
+      ]
+    },
+    {
+      "text": "What is your main goal?",
+      "code": "user_goal",
+      "step": 4,
+      "type": "multi-selection",
+      "display_list_direction": "col",
+      "instructions":"Select all that apply",
+      "answers": [
+        {
+          "text": "Save time",
+          "next_question_code": "cooking_spent"
+        },
+        {
+          "text": "Save money",
+
+          "next_question_code": "cooking_spent"
+        },
+        {
+          "text": "Eat fresh",
+          "next_question_code": "cooking_spent"
+        },
+        {
+          "text": "Easy meals",
+          "next_question_code": "cooking_spent"
+        },
+        {
+          "text": "Lose weight",
+          "next_question_code": "cooking_spent"
+        },
+        {
+          "text": "Try new recipes",
+          "next_question_code": "cooking_spent"
+        },
+        {
+          "text": "Other",
+          "next_question_code": "cooking_spent",
+          "isOther":true
+        }
+      ]      
+    },
+    {
+      "text": "How much time do you like to spend cooking?",
+      "code": "cooking_spent",
+      "step": 5,
+      "type": "one-selection",
+      "display_list_direction": "row",
+      "answers": [
+        {
+          "text": "As little as possible",
+          "next_question_code": "kitchen_appliances",
+          "imgUrl":"https://assets.trafficpointltd.com/app/uploads/sites/106/2024/05/20115427/lessClock.svg"
+        },
+        {
+          "text": "Got time to cook",
+          "next_question_code": "kitchen_appliances",
+          "imgUrl":"https://assets.trafficpointltd.com/app/uploads/sites/106/2024/05/20115428/extracook.svg"
+        }
+      ]
+    },
+    {
+      "text": "What’s your go to appliances?",
+      "code": "kitchen_appliances",
+      "step": 6,
+      "type": "multi-selection",
+      "display_list_direction": "col",
+      "instructions":"Select all that apply",
+      "answers": [
+        {
+          "text": "Oven",
+          "next_question_code": "loader"
+        },
+        {
+          "text": "Grill",
+          "next_question_code": "loader"
+        },
+        {
+          "text": "Air fryer",
+          "next_question_code": "loader"
+        },
+        {
+          "text": "Microwave",
+          "next_question_code": "loader"
+        },
+        {
+          "text": "Stove",
+          "next_question_code": "loader"
+        },
+        {
+          "text": "Slow cooker",
+          "next_question_code": "loader"
+        },
+        {
+          "text": "Blender",
+          "next_question_code": "loader"
+        }
+      ]
+    },
+    {
+      "text": "Hold on...",
+      "code": "loader",
+      "step": 7,
+      "type": "loader",
+      "display_list_direction": "col",
+      "answers": [
+        {
+          "next_question_code": "recommandation"
+        }
+      ],
+      "extra_info":"Matching you with the most relevant meal delivery service"
+    },
+   
+    {
+      "text": "We found your match!",
+      "code": "recommandation",
+      "step": 8,
+      "type": "thank you",
+      "display_list_direction": "col",
+      "answers": []
+    }
+  ]
+}

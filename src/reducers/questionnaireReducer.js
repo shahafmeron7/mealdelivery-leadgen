@@ -22,6 +22,7 @@ export const initialState = () => {
     nextBtnEnabled: false,
     progressBarWidth: 0,
     flowID,
+    spacesListId:undefined,
     flowName,
   };
 };
@@ -86,7 +87,9 @@ export function reducer(state, action) {
 
     case actionTypes.SET_INPUT_MODIFIED:
       return { ...state, inputModified: action.payload };
-
+      case actionTypes.SET_SPACES_LIST_ID:
+        return { ...state, spacesListId: action.payload };
+  
     default:
       return state;
   }

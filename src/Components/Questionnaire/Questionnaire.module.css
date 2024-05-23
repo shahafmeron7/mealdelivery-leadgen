@@ -86,17 +86,17 @@
   align-items: center;
   justify-content:center ;
   flex-direction: column;
-  gap: 40px;
+  gap: 56px;
 }
 .loaderText{
   color: var(--black-color-1);
-  font-size: 40px;
+  font-size: 34px;
   font-weight: 600;
   text-align: center;
 }
 .loaderExtraInfoText{
   color: var(--black-color-1);
-  font-size: 28px;
+  font-size: 22px;
   text-align: center;
   font-weight: 400;
 }
