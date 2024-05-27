@@ -1,13 +1,13 @@
 // useImpressions.js
 import { useEffect, useRef } from 'react';
 import { buildEventData,sendImpressions } from '../utils/impression/impressionUtils';
-import Impression from '../utils/impression/impression';
+// import Impression from '../utils/impression/impression';
 export const useFirstImpression = () => {
     const hasSentImpression = useRef(false);
 
     useEffect(() => {
         if (!hasSentImpression.current) {
-            Impression();
+            // Impression(); //first impression turned off due to spaces in page.
             sendImpressions(
                 {},
                 import.meta.env.REACT_APP_FIRST_EVENT_NAME,

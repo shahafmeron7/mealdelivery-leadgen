@@ -6,7 +6,7 @@ import { useQuestionnaire } from "../context/QuestionnaireContext.jsx";
 const QuestionnaireLayout = React.forwardRef(({ children }, ref) => {
   const { questionnaireStarted,currentQuestionCode } = useQuestionnaire();
   const isEmailStep = currentQuestionCode ==="email";
-  const isWideScreen = useIsWideScreen();
+  const {isWideScreen} = useIsWideScreen();
   const mobileStyle = {
     height: "80vh",
     minHeight: "100%",

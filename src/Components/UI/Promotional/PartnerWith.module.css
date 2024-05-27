@@ -57,8 +57,8 @@ line-height: 36px;
 
 @media only screen and (max-width:992px){
 .partnerWithBrandsContainer{
-    row-gap: 15px; /* gap between rows */
-    column-gap: 15px; /* gap between columns */
+    row-gap: 24px; /* gap between rows */
+    column-gap: 24px; /* gap between columns */
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -71,6 +71,12 @@ line-height: 36px;
 }
 }
 @media only screen and (max-width:600px){
+  .partnerWithBrandsContainer{
+    row-gap: 15px; /* gap between rows */
+    column-gap: 15px; /* gap between columns */
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+}
     .partnerWithWrapper{
         /* padding: 0px 16px; */
     }

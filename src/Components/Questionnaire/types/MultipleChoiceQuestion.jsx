@@ -23,7 +23,7 @@ const MultipleChoiceQuestion = () => {
   );
   const [isOtherSelected, setIsOtherSelected] = useState(false);
   const [otherInputValue, setOtherInputValue] = useState("");
-  const isWideScreen = useIsWideScreen();
+  const {isWideScreen} = useIsWideScreen();
 
   const isDisplayDirectionCol =
     currentQuestion.display_list_direction === "col";

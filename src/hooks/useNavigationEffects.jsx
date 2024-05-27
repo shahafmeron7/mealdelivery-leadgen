@@ -10,7 +10,9 @@ export const useNavigationEffects = (state,moveToPrevQuestion) => {
          const handlePopState = () => {
              if (questionHistory.length > 1) {
                  if (questionnaireCompleted) {
-                     window.location.href = "https://top5mealdelivery.com/";
+                    moveToPrevQuestion();
+
+                    //  window.location.href = "https://top5mealdelivery.com/";
                  } else if (currentQuestionCode !== "loader") {
                      sendImpressions(
                          buildEventData(currentQuestion,flowID,flowName,import.meta.env.REACT_APP_USER_ACTION_CLICK_PREV_BROWSER),

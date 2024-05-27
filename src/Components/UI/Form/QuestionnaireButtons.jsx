@@ -8,7 +8,7 @@ const STREAM_STEP_NAME = import.meta.env.REACT_APP_STREAM_STEP_NAME;
 const USER_EVENT_NAME = import.meta.env.REACT_APP_USER_EVENT_NAME;
 
 const QuestionnaireButtons = () => {
-  const isWideScreen = useIsWideScreen();
+  const {isWideScreen} = useIsWideScreen();
 
   const {
     questionHistory,

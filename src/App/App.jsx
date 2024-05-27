@@ -22,7 +22,7 @@ function App() {
 
   
   const { questionnaireCompleted, questionnaireStarted } = useQuestionnaire();
-  const isWideScreen = useIsWideScreen()
+  const {isWideScreen} = useIsWideScreen()
   if (questionnaireCompleted) {
     return (
       <div className="AppWrapper">

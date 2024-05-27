@@ -14,7 +14,7 @@ const PartnerWith =React.lazy(() => import("@/components//UI/Promotional/Partner
 const FinalStepLayout = () => { 
 
   const {questionnaireCompleted} = useQuestionnaire()
-  const isWideScreen = useIsWideScreen()
+  const {isWideScreen,isTabletScreen} = useIsWideScreen()
    const finalStyle={
    padding:"48px 0px",
   }
@@ -34,7 +34,7 @@ const FinalStepLayout = () => {
       <ContentLayout bgColor={"rgba(0, 28, 65, 0.05)"} padding={`${isWideScreen ? "48px 40px" :"32px 16px" }`}>
         <ThankYou />
       </ContentLayout>
-      <ContentLayout bgColor={"#f6f6f6"} padding={isWideScreen ? "32px 0px 0px 0px" : "16px 16px 0px 16px"}>
+      <ContentLayout bgColor={"#f6f6f6"} padding={isWideScreen ? "32px 0px 0px 0px" : "16px 16px 0px 16px"} width={isTabletScreen ? "788px" : ""}>
       <LineupSpaces/>
       </ContentLayout>
       <ContentLayout bgColor={"#f6f6f6"} padding={stylePartner.padding}>

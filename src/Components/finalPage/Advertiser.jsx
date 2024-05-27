@@ -4,7 +4,7 @@ import styles from "./Advertiser.module.css";
 
 const Advertiser = () => {
   const [isDisclaimerVisible, setIsDisclaimerVisible] = useState(false);
-  const isWideScreen = useIsWideScreen();
+  const {isWideScreen} = useIsWideScreen();
   const disclaimerRef = useRef(null);
   const advTextRef = useRef(null);
   const toggleDisclaimer = (event) => {

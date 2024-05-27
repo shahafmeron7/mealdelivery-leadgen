@@ -64,7 +64,8 @@ line-height: 32px;
 @media only screen and (min-width: 768px) and (max-width:992px){
   .bestMatchCardsContainer{
     flex-direction: column;
-    gap: 48px;
+    /* gap: 48px; */
+    gap:16px;
   }
   .bestMatchCard{
     padding:  24px 64px;

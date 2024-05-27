@@ -7,7 +7,7 @@ const PartnerWith = () => {
 
 
   const { questionnaireCompleted } = useQuestionnaire();
-  const isWideScreen = useIsWideScreen();
+  const {isWideScreen} = useIsWideScreen();
 //  const finalStyle={
 //   padding:"48px 0px",
 //  }
@@ -31,7 +31,7 @@ const PartnerWith = () => {
 
           const outlink = `https://out.top5mealdelivery.com/track/click/?pid=${logo.pid}&internal=true&page=${window.location.pathname}&action=partnerwith`
           return (
-            <a key={logo.alt} href={outlink} target="_blank" rel="nofollow" className={styles.partnerWithLogoContainer}   style={{
+            <a key={logo.alt} href={`${logo.href ? logo.href : outlink}`} target="_blank" rel="nofollow" className={styles.partnerWithLogoContainer}   style={{
                 '--orderDesktop': logo.orderDesktop,
                 '--orderMobile': logo.orderMobile,
               }} >

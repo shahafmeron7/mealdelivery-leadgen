@@ -397,7 +397,7 @@ export const QuestionnaireHandlers = (
       return acc;
     }, {});
     
-     console.log(finalResponses);
+    //  console.log(finalResponses);
     
     sendImpressions(
       finalResponses,

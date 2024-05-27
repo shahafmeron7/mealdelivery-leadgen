@@ -24,7 +24,10 @@
 }
 @media only screen and (min-width: 768px) and (max-width:991px) {
   .layoutWrapper{
-    width: 721px;
+    /* min-width: 721px; */
+    /* max-width: 788px; */
+    width: 788px;
+
   }
 }
 
