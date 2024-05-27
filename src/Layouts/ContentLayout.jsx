@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './ContentLayout.module.css'
-const ContentLayout = ({children,bgColor}) => {
+const ContentLayout = ({children,bgColor,padding}) => {
   return (
-    <div className={styles.layoutContainer} style={{backgroundColor:bgColor}}>
+    <div className={styles.layoutContainer} style={{backgroundColor:bgColor,padding:padding}}>
       <div className={styles.layoutWrapper}>
         {children}
 

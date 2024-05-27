@@ -11,12 +11,12 @@
       "answers": [
         {
           "text": "Ready Made Dishes",
-          "next_question_code": "dietary_preferences",
+          "next_question_code": "recommandation",
           "imgUrl":"https://assets.trafficpointltd.com/app/uploads/sites/106/2024/05/20114041/ReadyMadeDishes.svg"
         },
         {
           "text": "Meal Kits (some cooking)",
-          "next_question_code": "dietary_preferences",
+          "next_question_code": "recommandation",
           "imgUrl":"https://assets.trafficpointltd.com/app/uploads/sites/106/2024/05/20114039/MealKits.svg"
         },
         {

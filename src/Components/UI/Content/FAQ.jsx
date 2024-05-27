@@ -7,7 +7,7 @@ const FAQ = () => {
       details: "After answering six short questions, our system automatically matches you with the best meal delivery service tailored to your personal preferences according to your answers.",
   },
     {
-        text: "Why is it important to compare brands?",
+        text: "Why is it important to compare services?",
         details: "Comparing different meal delivery service providers is key to finding the most relevant one for your dietary preferences. It ensures you receive the most suitable match out of the many options out there.",
     },
     {

@@ -6,7 +6,7 @@ const QuestionnaireTitle = () => {
     return (
       <div key={currentQuestionCode} className={`${styles.titleWrapper}`}>
       <h1 className={styles.title}>Find the right meal delivery service</h1>
-      <h2 className={styles.titleDescription}>Answer 6 questions to find the Meal Delivery Service that best suits you.</h2>
+      <h2 className={styles.titleDescription}>Answer 6 questions to find your match</h2>
     </div>
     );
   };

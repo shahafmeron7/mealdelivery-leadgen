@@ -7,21 +7,21 @@ const BestMatch = () => {
   const cards = [
     {
       title: "Expert Insight",
-      info: "We leverage our expertise to match you with the best service for your needs quickly.",
+      info: "We leverage our expertise to match you with the best service for your needs quickly",
       Logo: ExpertsLogo,
       alt: "Experts Logo",
     },
     {
-      title: "Trusted Providers",
-      info: "We exclusively partner with reputable & leading meal delivery services to ensure quality & reliability.",
+      title: "Trusted Services",
+      info: "We exclusively partner with reputable & leading meal delivery services to ensure quality & reliability",
       Logo: TrustedProvidedLogo,
-      alt: "Trusted Providers Logo",
+      alt: "Trusted Services Logo",
     },
     {
-      title: "Tailored Matches",
-      info: "A few quick questions to find the correct fit for your needs. Let us do all the hard work for you.",
+      title: "Personalized Matches",
+      info: "A few quick questions to find the correct fit for your needs. Let us do all the hard work for you",
       Logo: TailoredMatchesLogo,
-      alt: "Tailored Matches Logo",
+      alt: "Personalized Matches Logo",
     },
   ];
 

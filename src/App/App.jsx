@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar/Navbar.jsx";
 import FinalStepLayout from "@/layouts/FinalStepLayout.jsx";
 import ContentLayout from "@/layouts/ContentLayout.jsx";
 import Loading from "@/components/UI/LazyLoading/Loading";
+import useIsWideScreen from "@/hooks/useIsWideScreen"
 import "./App.css";
 const Footer = React.lazy(() => import("@/components/Footer/Footer.jsx"));
 const BestMatch = React.lazy(() => import("@/components/UI/Promotional/BestMatch.jsx"));
@@ -18,7 +19,10 @@ const PartnerWith = React.lazy(
 
 
 function App() {
+
+  
   const { questionnaireCompleted, questionnaireStarted } = useQuestionnaire();
+  const isWideScreen = useIsWideScreen()
   if (questionnaireCompleted) {
     return (
       <div className="AppWrapper">
@@ -37,13 +41,19 @@ function App() {
       <Questionnaire />
       {!questionnaireStarted && (
         <>
-          <ContentLayout>
+        <ContentLayout bgColor={"#f6f6f6"} padding={isWideScreen ? "0px" : "8px 16px 32px 16px"}>
             <Suspense fallback={<Loading />}>
               <PartnerWith />
             </Suspense>
+            </ContentLayout>
+            <ContentLayout bgColor={"#f6f6f6"} padding={isWideScreen ? "64px 0px" : "0px 16px 32px"}>
+
             <Suspense fallback={<Loading />}>
               <BestMatch />
             </Suspense>
+            </ContentLayout>
+            <ContentLayout bgColor={"#f6f6f6"} padding={isWideScreen ? "0px 0px 64px 0px" : "0px 16px 32px"}>
+
             <Suspense fallback={<Loading />}>
               <FAQ />
             </Suspense>

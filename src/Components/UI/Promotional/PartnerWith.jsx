@@ -8,35 +8,38 @@ const PartnerWith = () => {
 
   const { questionnaireCompleted } = useQuestionnaire();
   const isWideScreen = useIsWideScreen();
-
- const finalStyle={
-  padding:"64px 0px",
- }
-  const finalMobileStyle = {
-    padding: "0px 16px 32px",
-  };
+//  const finalStyle={
+//   padding:"48px 0px",
+//  }
+//   const finalMobileStyle = {
+//     padding: "0px 16px 16px",
+//   };
   // console.log(isWideScreen)
   return (
-    <div className={styles.partnerWithWrapper}   style={
-      questionnaireCompleted
-        ? !isWideScreen
-          ? finalMobileStyle
-          : finalStyle
-        : {}
-    }>
+    <div className={styles.partnerWithWrapper}   
+      // questionnaireCompleted
+      //   ? !isWideScreen
+      //     ? finalMobileStyle
+      //     : finalStyle
+      //   : {}
+    >
       <div className={styles.partnerWithContainer}>
         <h2 className={styles.partnerWithTitle}>We proudly partner with</h2>
         <div className={styles.partnerWithDivider}></div>
         <div className={styles.partnerWithBrandsContainer}>
-          {partnerBrands.map((logo, index) => (
-            <div key={logo.alt} className={styles.partnerWithLogoContainer}   style={{
+          {partnerBrands.map((logo, index) => {
+
+          const outlink = `https://out.top5mealdelivery.com/track/click/?pid=${logo.pid}&internal=true&page=${window.location.pathname}&action=partnerwith`
+          return (
+            <a key={logo.alt} href={outlink} target="_blank" rel="nofollow" className={styles.partnerWithLogoContainer}   style={{
                 '--orderDesktop': logo.orderDesktop,
                 '--orderMobile': logo.orderMobile,
               }} >
               <img height="30" width="100" className={styles.partnerWithLogo} src={logo.src} alt={logo.alt} loading="lazy" />
 
-            </div>
-          ))}
+            </a>
+          
+          )})}
         </div>
       </div>
     </div>
